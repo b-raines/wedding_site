@@ -3,7 +3,15 @@ WeddingSite::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+
+  root 'static_pages#home'
+  match '/signup', to: 'users#new', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/wedding', to: 'static_pages#wedding', via: 'get'
+  match '/party', to: 'static_pages#party', via: 'get'
+  match '/guestbook', to: 'static_pages#guestbook', via: 'get'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
