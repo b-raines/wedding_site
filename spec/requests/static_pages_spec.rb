@@ -11,13 +11,6 @@ describe "StaticPages" do
     it { should have_title(full_title(''))}
   end
 
-  describe "Signup page" do
-    before { visit signup_path }
-
-    it { should have_content('Sign up')}
-    it { should have_title(full_title('Sign Up'))}
-  end
-
   describe "Wedding info page" do
     before { visit wedding_path }
 

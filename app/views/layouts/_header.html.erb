@@ -9,12 +9,14 @@
 		    </button>
 		    <%= link_to 'Nicole & Brent', root_url, class: 'navbar-brand' %>
 		</div>
-		<div class="collapse navbar-collapse navbar-ex1-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li class="<%= 'active' if current_page?(wedding_path) %>"><%= link_to "Wedding Info", '/wedding' %></li>
-				<li class="<%= 'active' if current_page?(party_path) %>"><%= link_to "Bridal Party", '/party' %></li>
-				<li class="<%= 'active' if current_page?(guestbook_path) %>"><%= link_to "Guestbook", '/guestbook' %></li>
-			</ul>
-		</div>
+		<% if current_user %>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="<%= 'active' if current_page?(wedding_path) %>"><%= link_to "Wedding Info", wedding_path %></li>
+					<li class="<%= 'active' if current_page?(party_path) %>"><%= link_to "Bridal Party", party_path %></li>
+					<li class="<%= 'active' if current_page?(guestbook_path) %>"><%= link_to "Guestbook", guestbook_path %></li>
+				</ul>
+			</div>
+		<% end %>
 	</nav>
 </header>

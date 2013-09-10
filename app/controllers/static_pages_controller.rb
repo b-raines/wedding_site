@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+  before_action :show_signin_page_if_not_user
+
   def home
 
   end
@@ -14,6 +16,14 @@ class StaticPagesController < ApplicationController
 
   def guestbook
 
+  end
+
+  # before filters
+
+  def show_signin_page_if_not_user
+    unless current_user
+      redirect_to signin_path
+    end
   end
 
 end

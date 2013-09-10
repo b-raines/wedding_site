@@ -10,9 +10,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      sign_in @user
-      flash[:success] = "You were signed in!"
-      redirect_to @user
+      flash[:success] = "Account created!"
+      redirect_to root_url
     else
       render 'new'
     end
@@ -25,7 +24,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       flash[:success] = "Profile updated!"
       sign_in @user
-      redirect_to @user
+      redirect_to root_url
     else
       render 'edit'
     end
@@ -40,7 +39,8 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :relation, 
+                                   :password, :password_confirmation)
     end
 
     # Before filters
