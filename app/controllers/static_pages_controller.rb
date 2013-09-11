@@ -21,7 +21,7 @@ class StaticPagesController < ApplicationController
   # before filters
 
   def show_signin_page_if_not_user
-    unless current_user
+    unless signed_in?
       redirect_to signin_path
     end
   end

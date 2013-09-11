@@ -21,6 +21,12 @@ describe "UserPages" do
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
       end
+
+      describe "after submission" do
+        before { click_button submit }
+        it { should have_title('Sign Up') }
+        it { should have_selector('div.alert.alert-error') }
+      end
     end
 
     describe "with valid information" do
@@ -31,9 +37,17 @@ describe "UserPages" do
         fill_in "Password",     with: "foobar"
         fill_in "Confirmation", with: "foobar"
       end
-      
+
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
+      end
+
+      describe "after saving the user" do
+        before { click_button submit }
+        
+        it { should have_title(full_title('')) }
+        it { should have_link('Sign out') }
+        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
     end
   end
