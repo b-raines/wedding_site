@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  before_action :show_signin_page_if_not_signed_in
+  #before_action :show_signin_page_if_not_signed_in
 
   def home
 
@@ -18,12 +18,16 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def temp
+
+  end
+
   # before filters
 
-  def show_signin_page_if_not_signed_in
-    unless signed_in?
-      redirect_to signin_path
-    end
-  end
+  #def show_signin_page_if_not_signed_in
+  #  unless signed_in?
+  #    redirect_to signin_path
+  #  end
+  #end
 
 end
