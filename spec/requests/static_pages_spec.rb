@@ -3,9 +3,7 @@ require 'spec_helper'
 describe "StaticPages" do
 
   let(:user) { FactoryGirl.create(:user) }
-  before do
-    ApplicationController.any_instance.stub(:signed_in?).and_return(true)
-  end
+  before { sign_in user }
 
   subject { page }
 

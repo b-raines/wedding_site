@@ -1,21 +1,32 @@
 <header>
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
-		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-		    </button>
+			<% if signed_in? %>
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			    </button>
+			<% end %>
 		    <%= link_to 'Nicole & Brent', root_url, class: 'navbar-brand' %>
 		</div>
 		<% if signed_in? %>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="<%= 'active' if current_page?(wedding_path) %>"><%= link_to "Wedding Info", wedding_path %></li>
-					<li class="<%= 'active' if current_page?(party_path) %>"><%= link_to "Bridal Party", party_path %></li>
-					<li class="<%= 'active' if current_page?(guestbook_path) %>"><%= link_to "Guestbook", guestbook_path %></li>
-					<li><%= link_to "Sign out", signout_path, method: 'delete' %></li>
+					<li class="<%= 'active' if current_page?(wedding_path) %>"><%= link_to "Wedding Info", wedding_path, class: 'main-nav' %></li>
+					<li class="<%= 'active' if current_page?(party_path) %>"><%= link_to "Bridal Party", party_path, class: 'main-nav' %></li>
+					<li class="<%= 'active' if current_page?(guestbook_path) %>"><%= link_to "Guestbook", guestbook_path, class: 'main-nav' %></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							Account <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><%= link_to "Edit", edit_user_path(current_user) %></li>
+							<li class="divider"></li>
+							<li><%= link_to "Sign out", signout_path, method: 'delete' %></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 		<% end %>

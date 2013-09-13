@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
   end
@@ -19,10 +23,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
-    if @user.update(user_params)
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
       flash[:success] = "Profile updated!"
       sign_in @user
       redirect_to root_url
@@ -48,10 +54,10 @@ class UsersController < ApplicationController
 
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+      redirect_to root_url unless current_user?(@user)
     end
 
     def admin_user
-      redirect_to(root_url) unless current_user.admin?
+      redirect_to root_url unless current_user.admin?
     end
 end
