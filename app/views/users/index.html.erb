@@ -1,11 +1,10 @@
 <% provide(:title, 'Friends and Family') %>
 <h1>Friends and Family</h1>
 
+<%= will_paginate %>
+
 <ul class="users">
-	<% @users.each do |user| %>
-		<li>
-			<%= content_tag('span', "#{user.name}", class: 'user-name') %><br />
-			<%= content_tag('span', "#{user.relation}", class: 'user-relation') %>
-		</li>
-	<% end %>
+	<%= render @users %>
 </ul>
+
+<%= will_paginate %>

@@ -1,0 +1,7 @@
+<li>
+	<%= content_tag('span', "#{user.name}", class: 'user-name') %><br />
+	<%= content_tag('span', "#{user.relation}", class: 'user-relation') %>
+	<% if current_user.admin? && !current_user?(user) %>
+		<%= link_to 'delete', user, method: :delete, data: { confirm: "You sure?" } %>
+	<% end %>
+</li>
