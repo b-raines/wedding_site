@@ -4,6 +4,7 @@ WeddingSite::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :users
+  resources :microposts, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 
   root 'static_pages#home'

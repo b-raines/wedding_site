@@ -1,2 +1,21 @@
 <%= provide(:title, 'Guestbook') %>
 <h1>Guestbook</h1>
+<div class="center"><%= link_to "See all guests", users_path %></div>
+
+<aside class="col-xs-3 col-sm-3 col-md-3">
+	<section>
+		<%= render 'shared/user_info' %>
+	</section>
+	<section>
+		<%= render 'shared/micropost_form' %>
+	</section>
+</aside>
+
+<div class="col-xs-9 col-sm-9 col-md-9">
+	<% if Micropost.any? %>
+		<ol class="microposts">
+			<%= render @microposts %>
+		</ol>
+		<%= will_paginate @microposts %>
+	<% end %>
+</div>
