@@ -158,8 +158,8 @@ textarea {
   margin: 5px;
   bottom: 5px;
   right: 0;
-  animation: flash 4s infinite;
-  -webkit-animation: flash 4s infinite;
+  animation: flash 3s infinite;
+  -webkit-animation: flash 3s infinite;
 }
 
 /* typography */
@@ -355,6 +355,13 @@ input {
   height: auto !important;
 }
 
+input, textarea {
+  background-color: $translucent;
+  &:focus {
+    background-color: white;
+  }
+}
+
 .form {
   width: 40%;
   margin: 0 auto;
@@ -495,7 +502,7 @@ input {
   position: relative;
   padding-top: 1em;
   width: 100%;
-  min-height: 95%;
+  min-height: 94.5%;
   height: auto;
   background-color: transparent;
 }
