@@ -15,6 +15,7 @@ class StaticPagesController < ApplicationController
   end
 
   def guestbook
+    @user = current_user
     @microposts = Micropost.all.paginate(page: params[:page])
     @micropost = current_user.microposts.build if signed_in?
   end

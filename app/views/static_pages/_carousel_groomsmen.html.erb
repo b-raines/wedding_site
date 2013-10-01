@@ -1,0 +1,62 @@
+<div class="carousel-container">
+	<div id="carousel-2" class="carousel slide">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#kevin" data-slide-to="0" class="active"></li>
+			<li data-target="#carl" data-slide-to="1"></li>
+			<li data-target="#brad" data-slide-to="2"></li>
+			<li data-target="#jeff" data-slide-to="3"></li>
+			<li data-target="#alex" data-slide-to="4"></li>
+			<li data-target="#zack" data-slide-to="5"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<%= image_tag("kevin.jpg", alt: "Kevin", id: "kevin") %>
+				<div class="carousel-caption">
+					Kevin Haehle</br>Best Man
+				</div>
+			</div>
+			<div class="item">
+				<%= image_tag("carl.jpg", alt: "Carl", id: "carl") %>
+				<div class="carousel-caption">
+					Carl Krukoff</br>Best Man
+				</div>
+			</div>
+			<div class="item">
+				<%= image_tag("brad.jpg", alt: "Brad", id: "brad") %>
+				<div class="carousel-caption">
+					Brad Salyers</br>Groomsman
+				</div>
+			</div>
+			<div class="item">
+				<%= image_tag("jeff.jpg", alt: "Jeff", id: "jeff") %>
+				<div class="carousel-caption">
+					Jeff Brown</br>Groomsman
+				</div>
+			</div>
+			<div class="item">
+				<%= image_tag("alex.jpg", alt: "Alex", id: "alex") %>
+				<div class="carousel-caption">
+					Alex Ari</br>Groomsman
+				</div>
+			</div>
+			<div class="item">
+				<%= image_tag("zack.jpg", alt: "Zack", id: "zack") %>
+				<div class="carousel-caption">
+					Zack Krukoff</br>Assistant Ring Bearer
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-2" data-slide="prev">
+			<span class="icon-prev"></span>
+		</a>
+		<a class="right carousel-control" href="#carousel-2" data-slide="next">
+			<span class="icon-next"></span>
+		</a>
+	</div>
+</div>

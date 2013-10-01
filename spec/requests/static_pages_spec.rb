@@ -10,21 +10,21 @@ describe "StaticPages" do
   describe "Home page" do
     before { visit root_path }
 
-    it { should have_content('Welcome')}
     it { should have_title(full_title(''))}
   end
 
   describe "Wedding info page" do
     before { visit wedding_path }
 
-    it { should have_content('Venue')}
+    it { should have_content('Itinerary')}
     it { should have_title(full_title('Wedding Info'))}
   end
 
   describe "Bridal party page" do
     before { visit party_path }
 
-    it { should have_content('Bridesmaids')}
+    it { should have_content('bridesmaids')}
+    it { should have_content('groomsmen')}
     it { should have_title(full_title('Bridal Party'))}
   end
 

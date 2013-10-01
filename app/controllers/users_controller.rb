@@ -47,7 +47,8 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :relation, 
-                                   :password, :password_confirmation)
+                                   :password, :password_confirmation,
+                                   :filepicker_url)
     end
 
     # Before filters

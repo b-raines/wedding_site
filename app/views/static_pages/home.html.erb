@@ -1,1 +1,47 @@
-<h1>Welcome</h1>
+<%= provide(:current_page, 'home') %>
+
+<div class="blank-screen"></div>
+<div class="intro white">
+	<h1 class="story"><span class="cursive">the</span> STORY <%= image_tag("arrow.svg", alt: "arrow", class: "scroll-tip") %></h1>
+</div>
+<div class="intro-slide" id="boy">
+	<p><%= image_tag("crimson.svg", alt: "crimson") %> southern boy</p>
+</div>
+<div class="intro-slide" id="girl">
+	<p>a <%= image_tag("pats.svg", alt: "pats") %> girl</p>
+</div>
+<div class="intro-slide" id="path-cross">
+	<p>
+		<span id="paths">their paths</span></br>
+		<%= image_tag("crossed.svg", alt: "crossed", id: "crossed") %></br>
+		<span id="december">one December</span>
+	</p>
+</div>
+<div class="intro-slide" id="moved">
+	<p>he <%= image_tag("moved.svg", alt: "moved", id: "moving") %> to New Hampshire in January</p>
+</div>
+<div class="intro-slide" id="falling">
+	<p>
+		<span id="they">they</span>
+		<span id="began">began</span>
+		<span id="to">to</span>
+		<span id="fall">fall</span>
+		<span id="more">more</span>
+		<span id="in">in</span>
+		<span id="love">love</span>
+	</p>
+</div>
+<div class="intro-slide" id="family">
+	<p>and their family gained a member</p>
+	<%= image_tag("family.jpg", alt: "family") %>
+</div>
+<div class="intro-slide" id="ring">
+	<p>only one thing remained</p>
+	<%= image_tag("tacori.png", alt: "ring") %>
+</div>
+<div class="intro-slide" id="careers">
+	<p>now they are both pursuing new careers and planning on moving to Boston</p>
+</div>
+<div class="intro-slide" id="wedding">
+	<p>and cannot wait for you to join them on July 19th!</p>
+</div>

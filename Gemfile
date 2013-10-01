@@ -11,6 +11,11 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'pg'
 gem 'newrelic_rpm'
 gem 'zip'
+gem 'filepicker-rails'
+gem 'sass-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
+gem 'animate-rails'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
@@ -28,9 +33,6 @@ group :test do
   gem 'growl', '1.0.3'
   gem 'factory_girl_rails', '4.2.1'
 end
-
-# Use SCSS for stylesheets
-gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.1.1'

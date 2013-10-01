@@ -1,21 +1,26 @@
 <% provide(:title, "Sign In") %>
+<% provide(:current_page, 'info') %>
 
-<div class="jumbotron">
-	<h1>Welcome to Nicole &amp; Brent's Wedding Website!</h1>
-	<div class="row">
-		<div class="span6 offset3">
-			<%= form_for(:session, url: sessions_path) do |f| %>
+<div class="clear-screen">
+	<div class="container content">
+		<div class="page">
+			<h1>Welcome to our wedding site!</h1>
+			<div class="form">
+				<div class="span6 offset3">
+					<%= form_for(:session, url: sessions_path) do |f| %>
 
-			<%= f.label :email %>
-			<%= f.text_field :email %>
+					<%= f.label :email %>
+					<%= f.text_field :email %>
 
-			<%= f.label :password %>
-			<%= f.password_field :password %><br />
+					<%= f.label :password %>
+					<%= f.password_field :password %><br />
 
-			<%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-			<% end %>
+					<%= f.submit "Sign in", class: "btn btn-main" %>
+					<% end %>
 
-			<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+					<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

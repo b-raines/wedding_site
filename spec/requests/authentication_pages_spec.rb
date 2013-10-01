@@ -31,9 +31,9 @@ describe "Authentication" do
       before { sign_in user }
 
       it { should have_title(full_title('')) }
-      it { should have_link('Wedding Info', href: wedding_path) }
-      it { should have_link('Bridal Party', href: party_path) }
-      it { should have_link('Guestbook', href: guestbook_path) }
+      it { should have_link('wedding info', href: wedding_path) }
+      it { should have_link('bridal party', href: party_path) }
+      it { should have_link('guestbook', href: guestbook_path) }
       it { should_not have_link('Sign in', href: signin_path) }
       it { should_not have_link('Sign up now!', href: signup_path) }
 

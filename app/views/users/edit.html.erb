@@ -1,12 +1,20 @@
 <% provide(:title, "Edit Info") %>
-<h1>Update your information</h1>
+<% provide(:current_page, 'info') %>
 
-<div class="row">
-	<div class="span6 offset3">
-		<%= form_for(@user) do |f| %>
-			<%= render 'fields', f: f %>
-			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-		<% end %>
-
+<div class="clear-screen">
+	<div class="container content">
+		<div class="page">
+			<h1>Update your information</h1>
+			<div class="form">
+				<div class="row">
+					<div class="span6 offset3">
+						<%= form_for(@user) do |f| %>
+							<%= render 'fields', f: f %>
+							<%= f.submit "Save changes", class: "btn btn-main" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

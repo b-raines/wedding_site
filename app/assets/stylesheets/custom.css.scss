@@ -2,22 +2,87 @@
 
 /* mixins, variables, etc. */
 
+@keyframes flash {
+  0% {opacity: 1;}
+  5% {opacity: 0.9;}
+  10% {opacity: 0.8;}
+  15% {opacity: 0.7;}
+  20% {opacity: 0.6;}
+  25% {opacity: 0.5;}
+  30% {opacity: 0.4;}
+  35% {opacity: 0.3;}
+  40% {opacity: 0.2;}
+  45% {opacity: 0.1;}
+  50% {opacity: 0;}
+  55% {opacity: 0.1;}
+  60% {opacity: 0.2;}
+  65% {opacity: 0.3;}
+  70% {opacity: 0.4;}
+  75% {opacity: 0.5;}
+  80% {opacity: 0.6;}
+  85% {opacity: 0.7;}
+  90% {opacity: 0.8;}
+  95% {opacity: 0.9;}
+}
+@-webkit-keyframes flash {
+  0% {opacity: 1;}
+  5% {opacity: 0.9;}
+  10% {opacity: 0.8;}
+  15% {opacity: 0.7;}
+  20% {opacity: 0.6;}
+  25% {opacity: 0.5;}
+  30% {opacity: 0.4;}
+  35% {opacity: 0.3;}
+  40% {opacity: 0.2;}
+  45% {opacity: 0.1;}
+  50% {opacity: 0;}
+  55% {opacity: 0.1;}
+  60% {opacity: 0.2;}
+  65% {opacity: 0.3;}
+  70% {opacity: 0.4;}
+  75% {opacity: 0.5;}
+  80% {opacity: 0.6;}
+  85% {opacity: 0.7;}
+  90% {opacity: 0.8;}
+  95% {opacity: 0.9;}
+}
+
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-$gray: #999;
+$dark-gray: #444;
+$gray: #888;
+$medium-gray: #ccc;
+$light-gray: #eee;
+$border-gray: #c7c7c7;
+$hdr-ftr-gray: #f8f8f8;
+$off-white: #fefefb;
+$translucent: rgba(white, 0.6);
 
 /* universal */
 
 html {
-  overflow: visible !important;
+  overflow-y: scroll !important;
+  height: 100%;
 }
 
 body {
-  padding-top: 60px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: $dark-gray;
+  background-color: transparent;
+  padding-top: 3.5em;
+  height: 100%;
+}
+
+table {
+  border-bottom: $border-gray solid 0.1em;
+}
+
+th, td {
+  border-color: $border-gray !important;
 }
 
 section {
@@ -26,6 +91,14 @@ section {
 
 textarea {
   resize: vertical;
+  background-color: $translucent;
+}
+
+.container.content {
+  position: relative;
+  padding: 0.1em 0 1.5em 0;
+  min-width: 320px;
+  min-height: 94.5%;
 }
 
 .center {
@@ -35,10 +108,65 @@ textarea {
   }
 }
 
+.wrapper {
+  min-width: 24em;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.center-position {
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 0.2em;
+}
+
+.page {
+  position: relative;
+  overflow: auto;
+  border: $border-gray solid 0.1em;
+  background-color: $translucent;
+  margin: 0.5em;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.link {
+  background-color: $medium-gray;
+  margin: 2em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  color: $dark-gray;
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  &:hover {
+    color: black;
+    background-color: rgba($gray, 0.6);
+    text-decoration: none;
+  }
+}
+
+.white {
+  background-color: white;
+}
+
+.scroll-tip {
+  display: block;
+  z-index: 9999;
+  position: absolute;
+  margin: 5px;
+  bottom: 5px;
+  right: 0;
+  animation: flash 4s infinite;
+  -webkit-animation: flash 4s infinite;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  font-family: 'Bubbler One', sans-serif;
 }
 
 h1 {
@@ -48,13 +176,8 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
+h2, h3 {
   text-align: center;
-  font-weight: normal;
-  color: #999;
 }
 
 p {
@@ -62,18 +185,160 @@ p {
   line-height: 1.7em;
 }
 
+.cursive {
+  font-family: 'Clicker Script', cursive;
+  font-size: 1.5em;
+}
+
+/* header */
+
+#heart {
+  position: relative;
+  width: 1.5em;
+  top: -0.4em;
+}
+
+#main-nav {
+  min-height: 3.5em;
+  height: 3.5em;
+  margin: 0;
+  border-bottom: $border-gray solid 0.1em;
+  background-color: white;
+  li.active a {
+    color: black;
+    font-weight: bold;
+    background-color: $light-gray;
+  }
+  a {
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.navbar-scroll {
+  position: absolute;
+  border-radius: 0;
+  bottom: 60px;
+  width: 100%;
+}
+
+.main-nav {
+  padding-bottom: 0 !important;
+  padding-top: 1.6em !important;
+}
+
+.navbar-nav {
+  margin: 0;
+  font-family: 'Bubbler One', sans-serif;
+  font-size: 1.2em;
+}
+
+.navbar-collapse {
+  padding: 0;
+}
+
+.navbar-brand {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  top: 0.5em;
+  font-family: 'Bubbler One', sans-serif;
+  font-size: 1.8em;
+}
+
+.dropdown-menu {
+  background: white;
+  font-size: 1em;
+  li {
+    a {
+      color: $dark-gray;
+      &:hover {
+        color: black;
+        background-color: inherit;
+      }
+    }
+  }
+}
+
+/* footer */
+
+footer {
+  position: relative;
+  z-index: 999;
+  display: block;
+  bottom: 0;
+  clear: both;
+  width: 100%;
+  height: 3em;
+  text-align: center;
+  margin-top: 0;
+  padding: 0.8em;
+  background-color: white;
+  border-top: $border-gray solid 0.1em;
+}
+
+#smiley {
+  position: relative;
+  bottom: 0.15em;
+}
+
 /* alerts */
+
+.alert {
+  width: 90%;
+  position: relative;
+  margin: 0.5em auto;
+  text-align: center;
+
+}
 
 .alert-error {
   color: #b94a48;
-  background-color: #f2dede;
-  border-color: #eed3d7;
+  background-color: rgba(#f2dede, 0.7);
+  border-color: rgba(#cb5d61, 0.5);
 }
 
 .alert-notice {
   color: #99997A;
-  background-color: #FFF6BF;
-  border-color: #FFD324;
+  background-color: rgba(#FFF6BF, 0.7);
+  border-color: rgba(#FFD324, 0.5);
+}
+
+.alert-success {
+  opacity: 0.9;
+}
+
+/* pagination */
+
+.pagination {
+  margin-left: 2.5em;
+  a {
+    color: $gray;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      color: $dark-gray;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      display: inline;
+      &.active {
+        background-color: rgba(black, 0.2);
+        border-radius: 0.3em;
+        padding: 0.7em;
+        a {
+          color: white;
+          font-weight: bold;
+          text-shadow: black 0 0 0.1em;
+        }
+      }
+    }
+  }
 }
 
 /* forms */
@@ -90,6 +355,11 @@ input {
   height: auto !important;
 }
 
+.form {
+  width: 40%;
+  margin: 0 auto;
+}
+
 #error_explanation {
   color: #f00;
   ul {
@@ -103,6 +373,36 @@ input {
   @extend .error;
 }
 
+.filepicker {
+  margin-bottom: 2em;
+}
+
+/* buttons */
+
+.btn {
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  width: auto;
+}
+
+.btn-main {
+  background-color: inherit;
+  color: black;
+  letter-spacing: 0.1em;
+  border: $dark-gray solid 0.1em;
+  &:hover {
+    border-color: $gray;
+    background-color: $gray;
+    color: white;
+  }
+}
+
+.btn-filepicker {
+  margin: 0.5em 0 0.5em 0.5em;
+  background-color: $light-gray;
+  color: black;
+}
+
 /* miscellaneous */
 
 .debug_dump {
@@ -113,58 +413,558 @@ input {
   @include box_sizing;
 }
 
+.upside-down {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+/* backgrounds */
+
+.background {
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.background-home {
+  background: image_url("hands.jpg") no-repeat fixed center;
+}
+
+.background-guestbook {
+  background: image_url("tree.jpg") no-repeat fixed center;
+}
+
+.background-wedding {
+  background: image_url("ring.jpg") no-repeat fixed center;
+}
+
+.background-party {
+  background: image_url("backs.jpg") no-repeat fixed center;
+}
+
+.background-guests {
+  background: image_url("maddie_closeup.jpg") no-repeat fixed center;
+}
+
+.background-info {
+  background: image_url("hands.jpg") no-repeat fixed center;
+}
+
+/* home */
+
+.story {
+  position: absolute;
+  top: -63px;
+  text-align: center;
+  font-family: 'Bubbler One', sans-serif;
+  margin: 0;
+  width: 100%;
+  background-color: $translucent;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.story-fixed {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  border-bottom: $border-gray solid 1px;
+  background-color: white;
+}
+
+.blank-screen {
+  width: 100%;
+  height: 100%;
+}
+
+.blank-alert-screen {
+  height: 90%;
+}
+
+.white-screen {
+  position: relative;
+  padding-top: 1em;
+  width: 100%;
+  min-height: 95%;
+  height: auto;
+  background-color: $translucent;
+}
+
+.clear-screen {
+  position: relative;
+  padding-top: 1em;
+  width: 100%;
+  min-height: 95%;
+  height: auto;
+  background-color: transparent;
+}
+
+.gray-screen {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  background-color: $light-gray;
+}
+
+/*intro*/
+
+.intro {
+  z-index: 999;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  .story {
+    background-color: white;
+  }
+}
+
+.intro-fixed {
+  position: fixed;
+  top: 0;
+  background-color: transparent;
+}
+
+.intro-slide {
+  overflow: hidden;
+  position: relative;
+  font-size: 64px;
+  font-family: 'Bubbler One', sans-serif;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-weight: bold;
+  p {
+    position: relative;
+    margin: 0;
+    padding: 0 0.25em;
+  }
+}
+
+#boy {
+  img {
+    position: relative;
+    bottom: 0.1em;
+    vertical-align: top;
+    width: 100px;
+  }
+}
+
+#girl {
+  img {
+    position: relative;
+    bottom: 3px;
+  }
+}
+
+#paths {
+  z-index: 1;
+  position: relative;
+  background-color: rgba(white, 0.5);
+  padding: 0 0.5em;
+  border-radius: 3px;
+  width: 100%;
+}
+
+#crossed {
+  z-index: 0;
+  position: relative;
+  max-width: 500px;
+  min-width: 300px;
+  width: 50%;
+  top: -2.7em;
+}
+
+#december{
+  z-index: 1;
+  position: relative;
+  background-color: rgba(white, 0.5);
+  padding: 0 0.1em;
+  border-radius: 3px;
+  top: -5.4em;
+}
+
+#falling {
+  background: image_url("heart.svg") no-repeat center fixed;
+  background-size: 50%;
+  -webkit-background-size: 50%;
+  -moz-background-size: 50%;
+}
+
+#family {
+  img {
+    position: absolute;
+    top: 75px;
+  }
+}
+
+#ring {
+  p {
+    z-index: 1;
+  }
+  img {
+    position: relative;
+    max-width: 440px;
+    width: 75%;
+    margin: 0 auto;
+    top: 0;
+  }
+}
+
+#they, #began, #to, #fall, #more, #in, #love, #moving {position: relative;}
+
 /* friends and family */
 
 .users {
   list-style: none;
+  padding: 0 2.5em;
   margin: 0;
   li {
+    position: relative;
     overflow: 1em 0;
-    border-top: 0.1em solid $gray;
+    border-top: 0.1em solid $border-gray;
+    padding: 1em 1em 1em 12em;
+    min-height: 13em;
     &:last-child {
-      border-bottom: 0.1em solid $gray;
+      border-bottom: 0.1em solid $border-gray;
     }
   }
 }
 
+.user-image {
+    position: absolute;
+    left: 0;
+    padding: 0.2em;
+    border-radius: 0.3em;
+    border: $border-gray solid 0.1em;
+}
+
+/* bridal party */
+
+.stackslider {
+  padding: 1em;
+}
+
+#party-nav {
+  min-width: 20em;
+  width: 50%;
+  margin: 1em auto;
+  padding: 0.5em;
+}
+
+.centered-pills {
+  text-align: center;
+  li {
+    float: none;
+    display: inline-block;
+  }
+}
+
+.nav-pills li {
+  a {
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    color: $gray - #222;
+    &:hover {
+      background-color: rgba($medium-gray, 0.3);
+    }
+  }
+  &.active a {
+    background-color: rgba($gray, 0.3);
+    color: black;
+    font-weight: bold;
+    &:hover {
+      background-color: $gray + #222;
+      color: $dark-gray;
+      font-weight: bold;
+    }
+  }
+}
+
+/* wedding info */
+
+.nav-tabs {
+  margin: 0.5em auto;
+  max-width: 99%;
+  li.active a {
+    background-color: inherit;
+    border-bottom: none;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: inherit;
+    }
+  }
+}
+
+.nav-tabs a {
+  color: $gray;
+  background-color: $hdr-ftr-gray;
+  border-left-color: $medium-gray !important;
+  border-right-color: $medium-gray !important;
+  border-top-color: $medium-gray !important;
+}
+
+.itinerary {
+  margin: 2em 0;
+  padding: 2em 0;
+  padding: 2em 1em;
+}
+
+.day {
+  width: auto;
+  display: inline;
+}
+
+.schedule {
+  float: right;
+  width: 70%;
+}
+
+.schedule-time {
+  width: 10%;
+}
+
+.schedule-event {
+  width: 50%;
+}
+
+.schedule-location {
+  position: relative;
+  width: 40%;
+}
+
+.loc-link {
+  position: relative;
+  margin: 0 0.5em;
+  vertical-align: middle;
+  color: $dark-gray;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+  .caret {
+    position: relative;
+    vertical-align: middle;
+  }
+}
+
+.popup {
+  list-style-type: circle;
+  width: auto;
+  padding: 0 0.5em;
+  margin: 0 0 0 1em;
+  display: none;
+  color: $gray;
+  li:hover {
+    color: black;
+  }
+}
+
+.accomodations {
+  &:first-of-type {
+    margin-top: 1em;
+  }
+  margin: 0.5em;
+  padding: 0.5em;
+  border-bottom: $border-gray solid 0.1em;
+}
+
+.hotel {
+  text-align: left;
+}
+
+.accomodation-desc {
+  line-height: 1.2;
+}
+
+/* carousel */
+
+.carousel {
+  max-width: 450px;
+}
+
+.carousel-container {
+  max-width: 460px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  border: $border-gray solid 0.1em;
+}
+
+.carousel.slide {
+  height: auto;
+  margin: 0 auto;
+}
+
+.carousel-caption {
+  position: absolute;
+  height: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(#222, 0.6);
+  padding-top: 0.6em;
+}
+
+.carousel-indicators {
+  bottom: -0.6em;
+}
+
+/* guestbook */
+
+.user-info {
+  text-align: center;
+  background-color: $translucent;
+  padding: 0.5em;
+  border: 0.1em solid $border-gray;
+  max-width: 27em;
+}
+
+.profile-pic {
+    padding: 0.2em;
+    border: $border-gray solid 0.1em;
+    border-radius: 0.3em;
+    img {
+      display: block;
+      width: 100%;
+      margin: 0 auto;  
+    }
+  }
+
+#guests {
+  margin: 0 auto 1em auto;
+  width: 9em;
+  font-size: 1.2em;
+  border-radius: 0.3em;
+  border: $border-gray solid 0.1em;
+}
+
 .user-name {
-  font: 1.2em bold;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 .user-relation {
   margin-left: 1em;
   font-size: 0.9em;
+  color: $gray;
 }
 
-.pagination {
-  ul {
-    list-style: none;
-    li {
-      display: inline;
-    }
-  }
+.micropost-form {
+  max-width: 27em;
+
 }
 
-/* microposts */
+.posts {
+  min-width: 25em;
+}
 
 .microposts {
   list-style: none;
   margin: 10px 0 0 0;
 
   li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    position: relative;
+    margin: 2em 2em 2em 0;
+    padding: 0.5em 0.5em 0.5em 3em;
+    border: $border-gray solid 0.1em;
+    border-radius: 0.3em;
+    background-color: $translucent;
+    img {
+      position: absolute;
+      width: 4.7em;
+      top: -1.5em;
+      left: -2em;
+      border-radius: 50%;
+      border: $border-gray solid 1px;
+    }
   }
 }
+
+.expand {
+  transform: scale(4);
+  -webkit-transform: scale(4);
+  -ms-transform: scale(4);
+}
+
 .content {
   display: block;
+
 }
 .timestamp {
+  border-top: $border-gray solid 0.1em;
   color: $gray;
 }
 aside {
+  margin: 0 1em;
   textarea {
     height: 100px;
-    margin-bottom: 5px;
+    margin: 0.5em 0;
+  }
+}
+
+/* media queries */
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    background-color: rgba($light-gray, 0.9);
+  }
+  aside {
+    margin: 0 auto;
+  }
+  .micropost-form {
+    margin: 0 auto;
+  }
+  .posts {
+    margin: 0 auto;
+  }
+  .microposts {
+    width: 100%;
+  }
+  .user-info {
+    margin: 1em auto;
+  }
+  .pagination {
+    width: 100%;
+    text-align: center;
+    margin: 1em auto;
+  }
+  .accomodations {
+    width: 100%;
+    margin: 1em auto;
+  }
+  .accomodation-desc {
+    width: 100%;
+    margin: 1em auto;
+  }
+  .day {
+    display: block;
+    text-align: center;
+  }
+  .schedule {
+    width: 100%;
+  }
+  .itinerary {
+    padding-top: 0.5em;
+  }
+  .white-screen {
+    min-height: 465px;
+  }
+  .carousel-container {
+    max-width: 340px;
+  }
+  .intro-slide p {
+    font-size: 48px;
+  }
+  #boy img {
+    width: 70px;
+  }
+  #girl img {
+    width: 375px;
+    bottom: 0;
   }
 }

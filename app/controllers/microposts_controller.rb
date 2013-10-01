@@ -10,6 +10,7 @@ class MicropostsController < ApplicationController
       flash[:success] = "Post created!"
       redirect_to guestbook_path
     else
+      @user = current_user
       render 'static_pages/guestbook'
     end
   end

@@ -1,4 +1,7 @@
 <li>
+	<div class="user-image">
+		<%= filepicker_image_tag user.filepicker_url, w: 150, h: 150, fit: 'crop', cache: 'true' %>
+	</div>
 	<%= content_tag('span', "#{user.name}", class: 'user-name') %><br />
 	<%= content_tag('span', "#{user.relation}", class: 'user-relation') %>
 	<% if current_user.admin? && !current_user?(user) %>

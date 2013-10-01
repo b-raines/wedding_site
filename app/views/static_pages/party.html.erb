@@ -1,16 +1,28 @@
 <%= provide(:title, 'Bridal Party') %>
+<%= provide(:current_page, 'party') %>
 
-<ul class="col-xs-4 col-sm-2 col-md-2 nav nav-pills nav-stacked">
-	<li class="active"><a href="#bridesmaids" data-toggle="tab">Bridesmaids</a></li>
-	<li><a href="#groomsmen" data-toggle="tab">Groomsmen</a></li>
-</ul>
+<div class="blank-screen"></div>
+<div class="white-screen">
+	<h1 class="story"><span class="cursive">the</span> PARTY <%= image_tag("arrow.svg", alt: "arrow", class: "scroll-tip") %></h1>
+	<div class="container content">
+		<div class="page">
+			<nav id="party-nav">
+				<ul class="nav nav-pills centered-pills">
+					<li class="active"><a href="#bridesmaids" data-toggle="tab">bridesmaids</a></li>
+					<li><a href="#groomsmen" data-toggle="tab">groomsmen</a></li>
+				</ul>
+			</nav>
 
-<div class="tab-content">
-	<div class="tab-pane active" id="bridesmaids">
-		bridesmaids
-	</div>
+			<div class="tab-content">
+				<div class="tab-pane active" id="bridesmaids">
+					<%= render 'carousel_bridesmaids' %>
+				</div>
 
-	<div class="tab-pane" id="groomsmen">
-		groomsmen
+				<div class="tab-pane" id="groomsmen">
+					<%= render 'carousel_groomsmen' %>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
+
