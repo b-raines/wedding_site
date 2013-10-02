@@ -16,6 +16,7 @@ gem 'sass-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 gem 'animate-rails'
+gem 'heroku'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
