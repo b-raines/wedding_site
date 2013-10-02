@@ -464,27 +464,45 @@ input, textarea {
 }
 
 .background-home {
-  background: url(image_path("hands.jpg")) no-repeat fixed center;
+  background-image: url(image_path("hands.jpg"));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .background-guestbook {
-  background: url(image_path("tree.jpg")) no-repeat fixed center;
+  background-image: url(image_path("tree.jpg"));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .background-wedding {
-  background: url(image_path("ring.jpg")) no-repeat fixed center;
+  background-image: url(image_path("ring.jpg"));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .background-party {
-  background: url(image_path("backs.jpg")) no-repeat fixed center;
+  background-image: url(image_path("backs.jpg"));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .background-guests {
-  background: url(image_path("maddie_closeup.jpg")) no-repeat fixed center;
+  background-image: url(image_path("maddie_closeup.jpg"));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .background-info {
-  background: url(image_path("hands.jpg")) no-repeat fixed center;
+  background-image: url(image_path("hands.jpg"));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 /* home */
@@ -623,7 +641,10 @@ input, textarea {
 }
 
 #falling {
-  background: url(image_path("heart.svg")) no-repeat center fixed;
+  background-image: url(image_path("heart.svg"));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   background-size: 50%;
   -webkit-background-size: 50%;
   -moz-background-size: 50%;
