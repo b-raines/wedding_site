@@ -162,6 +162,18 @@ textarea {
   -webkit-animation: flash 3s infinite;
 }
 
+.scroll-tip-bottom {
+  bottom: 5px;
+}
+
+.scroll-tip-middle {
+  bottom: 10px;
+}
+
+.scroll-tip-top {
+  bottom: 15px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
