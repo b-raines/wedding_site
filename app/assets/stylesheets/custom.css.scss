@@ -61,6 +61,7 @@ $border-gray: #c7c7c7;
 $hdr-ftr-gray: #f8f8f8;
 $off-white: #fefefb;
 $translucent: rgba(white, 0.6);
+$light-blue: #0574FA;
 
 /* universal */
 
@@ -156,10 +157,17 @@ textarea {
   z-index: 9999;
   position: absolute;
   margin: 5px;
-  bottom: 5px;
-  right: 0;
-  animation: flash 3s infinite;
-  -webkit-animation: flash 3s infinite;
+  bottom: 10px;
+  animation: flash 2s infinite;
+  -webkit-animation: flash 2s infinite;
+}
+
+.tip-left {
+  right: 70%;
+}
+
+.tip-right {
+  left: 70%;
 }
 
 .scroll-tip-bottom {
@@ -200,6 +208,14 @@ p {
 .cursive {
   font-family: 'Clicker Script', cursive;
   font-size: 1.5em;
+}
+
+.blue {
+  color: $light-blue;
+}
+
+.shadow {
+  text-shadow: $dark-gray 0.03em 0.03em 0.07em;
 }
 
 /* header */
@@ -985,5 +1001,11 @@ aside {
   #girl img {
     width: 375px;
     bottom: 0;
+  }
+  .tip-left {
+    right: 85%;
+  }
+  .tip-right {
+    left: 85%;
   }
 }

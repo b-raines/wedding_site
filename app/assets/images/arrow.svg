@@ -28,9 +28,9 @@
      inkscape:window-height="758"
      id="namedview2998"
      showgrid="false"
-     inkscape:zoom="2.36"
-     inkscape:cx="16.106336"
-     inkscape:cy="-24.645009"
+     inkscape:zoom="6.675088"
+     inkscape:cx="21.580184"
+     inkscape:cy="-7.9066291"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -88,20 +88,8 @@
     </rdf:RDF>
   </metadata>
   <path
-     sodipodi:type="star"
      style="fill:#1a1a1a;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.90847714999999996;stroke-miterlimit:4;stroke-dasharray:none"
-     id="path3911"
-     sodipodi:sides="3"
-     sodipodi:cx="5.5084748"
-     sodipodi:cy="2.0879557"
-     sodipodi:r1="21.874422"
-     sodipodi:r2="10.937211"
-     sodipodi:arg1="0.52359878"
-     sodipodi:arg2="1.5707963"
-     inkscape:flatsided="true"
-     inkscape:rounded="0.02"
-     inkscape:randomized="0"
-     d="m 24.45228,13.025167 c -0.378876,0.656232 -37.508734,0.656232 -37.88761,0 -0.378877,-0.656233 18.1860527,-32.811633 18.9438049,-32.811633 0.7577522,0 19.3226811,32.1554 18.9438051,32.811633 z"
-     inkscape:transform-center-y="1.8802299"
-     transform="matrix(-0.34382254,0,0,-0.34382254,8.4092118,4.6475666)" />
+     clip-path="none"
+     d="M 2.0625 0.03125 C 0.84532571 0.059453442 0.032566536 0.099843105 0 0.15625 C -0.13026615 0.38187758 6.2394677 11.4375 6.5 11.4375 C 6.7605323 11.4375 13.161516 0.38187758 13.03125 0.15625 C 12.993218 0.090376676 11.781987 0.058659108 10.21875 0.03125 C 8.4911609 3.0443116 6.5788294 6.25 6.4375 6.25 C 6.2961706 6.25 4.3838391 3.0443116 2.65625 0.03125 C 2.4802051 0.034518631 2.2253533 0.027476487 2.0625 0.03125 z "
+     id="path3911" />
 </svg>
