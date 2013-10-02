@@ -464,42 +464,42 @@ input, textarea {
 }
 
 .background-home {
-  background-image: url(image_path('hands.jpg'));
+  background-image: asset_url('hands.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 .background-guestbook {
-  background-image: url(image_path('tree.jpg'));
+  background-image: asset_url('tree.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 .background-wedding {
-  background-image: url(image_path('ring.jpg'));
+  background-image: asset_url('ring.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 .background-party {
-  background-image: url(image_path('backs.jpg'));
+  background-image: asset_url('backs.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 .background-guests {
-  background-image: url(image_path('maddie_closeup.jpg'));
+  background-image: asset_url('maddie_closeup.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 .background-info {
-  background-image: url(image_path('hands.jpg'));
+  background-image: asset_url('hands.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -641,7 +641,7 @@ input, textarea {
 }
 
 #falling {
-  background-image: url(image_path('heart.svg'));
+  background-image: asset_url('heart.svg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
