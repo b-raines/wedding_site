@@ -274,7 +274,7 @@ p {
 }
 
 .dropdown-menu {
-  background: white;
+  background-color: white;
   font-size: 1em;
   li {
     a {
@@ -464,27 +464,27 @@ input, textarea {
 }
 
 .background-home {
-  background: image_url("hands.jpg") no-repeat fixed center;
+  background: url(image_path("hands.jpg")) no-repeat fixed center;
 }
 
 .background-guestbook {
-  background: image_url("tree.jpg") no-repeat fixed center;
+  background: url(image_path("tree.jpg")) no-repeat fixed center;
 }
 
 .background-wedding {
-  background: image_url("ring.jpg") no-repeat fixed center;
+  background: url(image_path("ring.jpg")) no-repeat fixed center;
 }
 
 .background-party {
-  background: image_url("backs.jpg") no-repeat fixed center;
+  background: url(image_path("backs.jpg")) no-repeat fixed center;
 }
 
 .background-guests {
-  background: image_url("maddie_closeup.jpg") no-repeat fixed center;
+  background: url(image_path("maddie_closeup.jpg")) no-repeat fixed center;
 }
 
 .background-info {
-  background: image_url("hands.jpg") no-repeat fixed center;
+  background: url(image_path("hands.jpg")) no-repeat fixed center;
 }
 
 /* home */
@@ -623,7 +623,7 @@ input, textarea {
 }
 
 #falling {
-  background: image_url("heart.svg") no-repeat center fixed;
+  background: url(image_path("heart.svg")) no-repeat center fixed;
   background-size: 50%;
   -webkit-background-size: 50%;
   -moz-background-size: 50%;
