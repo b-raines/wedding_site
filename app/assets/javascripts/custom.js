@@ -64,12 +64,18 @@ $(document).ready(function() {
       $intro.addClass('intro-fixed');
       $intro.removeClass('white');
       $body.removeClass('background-home');
-      $scrollTip.css({display: "none"});
     } else {
       $story.removeClass('story-fixed');
       $intro.removeClass('intro-fixed');
       $intro.addClass('white');
       $body.addClass('background-home');
+    };
+
+    
+
+    if(scrollTop > 0) {
+      $scrollTip.css({display: "none"});
+    } else {
       $scrollTip.css({display: "block"});
     };
   });

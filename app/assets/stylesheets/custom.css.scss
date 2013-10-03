@@ -170,10 +170,15 @@ textarea {
   display: block;
   z-index: 9999;
   position: absolute;
-  margin: 5px;
+  margin: 5px 10px;
   bottom: 10px;
-  animation: flash 2s infinite;
-  -webkit-animation: flash 2s infinite;
+  right: 0;
+  font-size: 0.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  animation: flash 3s infinite;
+  -webkit-animation: flash 3s infinite;
 }
 
 .tip-left {
