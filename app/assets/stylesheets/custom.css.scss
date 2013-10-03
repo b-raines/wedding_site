@@ -55,14 +55,14 @@
 
 @font-face {
   font-family: 'Bubbler';
-  src: asset_url('BubblerOne-Regular.ttf');
+  src: asset_url('BubblerOne-Regular.ttf', font);
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Clicker';
-  src: asset_url('ClickerScript-Regular.ttf');
+  src: asset_url('ClickerScript-Regular.ttf', font);
   font-weight: normal;
   font-style: normal;
 }
@@ -478,42 +478,42 @@ input, textarea {
 }
 
 .background-home {
-  background-image: asset_url('hands.jpg');
+  background-image: asset_url('hands.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 .background-guestbook {
-  background-image: asset_url('tree.jpg');
+  background-image: asset_url('tree.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 .background-wedding {
-  background-image: asset_url('ring.jpg');
+  background-image: asset_url('ring.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 .background-party {
-  background-image: asset_url('backs.jpg');
+  background-image: asset_url('backs.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 .background-guests {
-  background-image: asset_url('maddie_closeup.jpg');
+  background-image: asset_url('maddie_closeup.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 .background-info {
-  background-image: asset_url('hands.jpg');
+  background-image: asset_url('hands.jpg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -655,7 +655,7 @@ input, textarea {
 }
 
 #falling {
-  background-image: asset_url('heart.svg');
+  background-image: asset_url('heart.svg', image);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
