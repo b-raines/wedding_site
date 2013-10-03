@@ -54,17 +54,30 @@
 }
 
 @font-face {
-  font-family: 'Bubbler';
-  src: asset_url('BubblerOne-Regular.ttf', font);
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Bubbler';
+    src: asset_url('bubblerone-regular-webfont.eot', font);
+    src: asset_url('bubblerone-regular-webfont.eot?#iefix', font) format('embedded-opentype'),
+         asset_url('bubblerone-regular-webfont.woff', font) format('woff'),
+         asset_url('bubblerone-regular-webfont.ttf', font) format('truetype'),
+         asset_url('bubblerone-regular-webfont.svg#bubbler_oneregular', font) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
+
+
+
 @font-face {
-  font-family: 'Clicker';
-  src: asset_url('ClickerScript-Regular.ttf', font);
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Clicker';
+    src: asset_url('clickerscript-regular-webfont.eot', font);
+    src: asset_url('clickerscript-regular-webfont.eot?#iefix', font) format('embedded-opentype'),
+         asset_url('clickerscript-regular-webfont.woff', font) format('woff'),
+         asset_url('clickerscript-regular-webfont.ttf', font) format('truetype'),
+         asset_url('clickerscript-regular-webfont.svg#clicker_scriptregular', font) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 $dark-gray: #444;
