@@ -55,14 +55,14 @@
 
 @font-face {
   font-family: 'Bubbler';
-  src: url(font_path('BubblerOne-Regular.ttf'));
+  src: asset_url('BubblerOne-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Clicker';
-  src: url(font_path('ClickerScript-Regular.ttf'));
+  src: asset_url('ClickerScript-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
