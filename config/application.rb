@@ -8,8 +8,9 @@ Bundler.require(:default, Rails.env)
 
 module WeddingSite
   class Application < Rails::Application
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.svg)
     config.filepicker_rails.api_key = "Ask1wM9iGRt6cMudsR88Dz"
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
